@@ -41,7 +41,7 @@ const FortuneMapSection = ({
           </h2>
 
           <ul className={styles.card_points} style={{ paddingLeft: "5.5%" }}>
-            <Fade duration={500} cascade triggerOnce>
+            <Fade duration={1000} cascade triggerOnce>
               {points.map((point, index) => (
                 <li
                   key={index}
