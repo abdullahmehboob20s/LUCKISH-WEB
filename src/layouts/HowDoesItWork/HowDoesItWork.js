@@ -19,8 +19,8 @@ function HowDoesItWork() {
             />
           </Fade>
         </div>
-        <div className={styles.right}>
-          <Fade cascade triggerOnce direction="down">
+        <Fade cascade triggerOnce direction="down">
+          <div className={styles.right}>
             <h1
               className={`${
                 isBellow860px ? "fs-26px" : "fs-44px"
@@ -108,8 +108,8 @@ function HowDoesItWork() {
                 https://luckylottoworld.gitbook.io
               </a>
             </p>
-          </Fade>
-        </div>
+          </div>
+        </Fade>
       </div>
     </div>
   );
