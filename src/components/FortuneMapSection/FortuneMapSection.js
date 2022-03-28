@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./FortuneMapSection.module.css";
 import roadmap_card_circle from "assets/images/roadmap_card_circle.png";
 import useMediaQuery from "hooks/useMediaQuery";
+import { Fade } from "react-awesome-reveal";
 
 const FortuneMapSection = ({
   title,
@@ -40,16 +41,18 @@ const FortuneMapSection = ({
           </h2>
 
           <ul className={styles.card_points} style={{ paddingLeft: "5.5%" }}>
-            {points.map((point, index) => (
-              <li
-                key={index}
-                className={`${
-                  isBellow1000px ? "fs-14px" : "fs-16px"
-                } weight-4 white`}
-              >
-                {point}
-              </li>
-            ))}
+            <Fade duration={500} cascade triggerOnce delay={1000}>
+              {points.map((point, index) => (
+                <li
+                  key={index}
+                  className={`${
+                    isBellow1000px ? "fs-14px" : "fs-16px"
+                  } weight-4 white`}
+                >
+                  {point}
+                </li>
+              ))}
+            </Fade>
           </ul>
         </div>
       </div>
@@ -59,7 +62,9 @@ const FortuneMapSection = ({
       </div>
 
       <div className={styles.img_wrapper}>
-        <img src={img} alt="" />
+        <Fade duration={500} cascade triggerOnce delay={1000}>
+          <img src={img} alt="" />
+        </Fade>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .luckyBnbHeroBanner_parent {
@@ -25,6 +26,12 @@
 
 .luckyBnbHeroBanner_content > * {
   font-size: 6.5vw;
+}
+
+@media (max-width: 1000px) {
+  .heroContent {
+    min-height: auto;
+  }
 }
 
 @media (max-width: 880px) {

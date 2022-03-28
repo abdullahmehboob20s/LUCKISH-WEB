@@ -22,3 +22,9 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+
+@media (max-width: 1000px) {
+  .coins::before {
+    display: none;
+  }
+}

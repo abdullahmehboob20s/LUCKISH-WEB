@@ -11,37 +11,48 @@ import Tokenomics from "layouts/Tokenomics/Tokenomics";
 import UntilNextDraw from "layouts/UntilNextDraw/UntilNextDraw";
 import React from "react";
 import styles from "./HomePage.module.css";
+import { Fade } from "react-awesome-reveal";
 
 function HomePage() {
   return (
     <div className={styles.home}>
-      <Navbar />
-      <div className="mb-100px">
+      <Fade cascade triggerOnce direction="down">
+        <Navbar />
+      </Fade>
+      <div className="mb-100px" id="home">
         <Hero />
       </div>
       <div className="mb-100px">
-        <Introducing />
+        <Fade cascade triggerOnce direction="right">
+          <Introducing />
+        </Fade>
       </div>
       <div className="mb-150px">
-        <UntilNextDraw />
+        <Fade cascade triggerOnce direction="down">
+          <UntilNextDraw />
+        </Fade>
       </div>
       <div className="mb-100px">
         <HowDoesItWork />
       </div>
-      <div className="mb-100px">
-        <Tokenomics />
+      <div className="mb-100px" id="token">
+        <Fade cascade triggerOnce direction="left">
+          <Tokenomics />
+        </Fade>
       </div>
       <div className="mb-150px">
         <Features />
       </div>
-      <div className="mb-200px">
+      <div className="mb-200px" id="roadmap">
         <FortuneMap />
       </div>
       <div className="mb-200px">
         <Coins />
       </div>
-      <div className="mb-100px">
-        <Contact />
+      <div className="mb-100px" id="contact">
+        <Fade cascade triggerOnce>
+          <Contact />
+        </Fade>
       </div>
       <div className="mb-100px">
         <Footer />

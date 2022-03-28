@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "assets/images/logo.png";
 import styles from "./Navbar.module.css";
 import SocialLink from "components/SocialLink/SocialLink";
@@ -8,16 +8,36 @@ import useMediaQuery from "hooks/useMediaQuery";
 import { GrFormClose } from "react-icons/gr";
 import { GiHamburgerMenu } from "react-icons/gi";
 import OutsideClickDetector from "hooks/OutsideClickDetector";
+import { Link as ScrollLink } from "react-scroll";
 
 function Navbar() {
   const isBellow860px = useMediaQuery("(max-width : 860px)");
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = OutsideClickDetector(() => {
     setIsOpen(false);
   });
 
+  useEffect(() => {
+    const handler = () => {
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    document.addEventListener("scroll", handler);
+
+    return () => {
+      document.removeEventListener("scroll", handler);
+    };
+  });
+
   return (
-    <div className={styles.navbarWrapper}>
+    <div
+      className={`${styles.navbarWrapper} ${isScrolled ? styles.scrolled : ""}`}
+    >
       <div className="container-wrapper">
         <div className={styles.navbar}>
           <div>
@@ -39,38 +59,46 @@ function Navbar() {
             </button>
 
             <div className={styles.navLinks}>
-              <a
-                href="#"
-                className={`fs-16px ${
+              <ScrollLink
+                to="home"
+                onClick={() => setIsOpen(false)}
+                offset={-100}
+                className={`fs-16px pointer ${
                   isBellow860px ? "black" : "white"
                 }  weight-4`}
               >
                 Home
-              </a>
-              <a
-                href="#"
-                className={`fs-16px ${
+              </ScrollLink>
+              <ScrollLink
+                to="token"
+                onClick={() => setIsOpen(false)}
+                offset={-150}
+                className={`fs-16px pointer ${
                   isBellow860px ? "black" : "white"
                 }  weight-4`}
               >
                 Token
-              </a>
-              <a
-                href="#"
-                className={`fs-16px ${
+              </ScrollLink>
+              <ScrollLink
+                to="roadmap"
+                onClick={() => setIsOpen(false)}
+                offset={-150}
+                className={`fs-16px pointer ${
                   isBellow860px ? "black" : "white"
                 }  weight-4`}
               >
                 Roadmap
-              </a>
-              <a
-                href="#"
-                className={`fs-16px ${
+              </ScrollLink>
+              <ScrollLink
+                to="contact"
+                onClick={() => setIsOpen(false)}
+                offset={-150}
+                className={`fs-16px pointer ${
                   isBellow860px ? "black" : "white"
                 }  weight-4`}
               >
                 Contact
-              </a>
+              </ScrollLink>
             </div>
 
             <div className={styles.navSocialLinks}>

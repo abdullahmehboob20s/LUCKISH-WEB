@@ -11,6 +11,7 @@ import cardProps_3 from "assets/images/cardProps_3.png";
 import FortuneMapSection from "components/FortuneMapSection/FortuneMapSection";
 import Title from "components/Title/Title";
 import useMediaQuery from "hooks/useMediaQuery";
+import { Fade } from "react-awesome-reveal";
 
 function FortuneMap() {
   const roadmap = useRef(null);
@@ -44,6 +45,7 @@ function FortuneMap() {
             ref={roadmapLine}
           ></div>
         </div>
+
         <FortuneMapSection
           title="Phase 1"
           img={roadmapCardImg1}

@@ -7,6 +7,7 @@ import FeatureCardIcon_4 from "assets/images/FeatureCardIcon_4.png";
 import star_glow from "assets/images/star_glow.png";
 import Title from "components/Title/Title";
 import useMediaQuery from "hooks/useMediaQuery";
+import { Fade } from "react-awesome-reveal";
 
 const Card = ({ title, desc, icon }) => {
   const isBellow760px = useMediaQuery("(max-width : 760px)");
@@ -38,30 +39,32 @@ function Features() {
 
       <div className={styles.cards_wrapper}>
         <div className="container-wrapper">
-          <div className={styles.cards_container}>
-            <Card
-              title="3.2% Auto-Liquidity Add"
-              desc="3.2% tax contributes towards the automatic injection of liquidity, helping to support a stable price."
-              icon={FeatureCardIcon_1}
-            />
-            <Card
-              title="2.4% Jackpot Rewards "
-              desc="2.4% tax paid out to the winning wallet every 6 hours automatically with 10% going to weekly and monthly draws."
-              icon={FeatureCardIcon_2}
-            />
-            <Card
-              title="2% Reflection Rewards"
-              desc="2% reflection tax on all transactions distributed to all holders."
-              icon={FeatureCardIcon_3}
-            />
-            <Card
-              title="2.4% Marketing & Charity"
-              desc="2.4% tax contribution to further marketing initiatives, token development and charity."
-              icon={FeatureCardIcon_4}
-            />
+          <Fade cascade triggerOnce direction="down">
+            <div className={styles.cards_container}>
+              <Card
+                title="3.2% Auto-Liquidity Add"
+                desc="3.2% tax contributes towards the automatic injection of liquidity, helping to support a stable price."
+                icon={FeatureCardIcon_1}
+              />
+              <Card
+                title="2.4% Jackpot Rewards "
+                desc="2.4% tax paid out to the winning wallet every 6 hours automatically with 10% going to weekly and monthly draws."
+                icon={FeatureCardIcon_2}
+              />
+              <Card
+                title="2% Reflection Rewards"
+                desc="2% reflection tax on all transactions distributed to all holders."
+                icon={FeatureCardIcon_3}
+              />
+              <Card
+                title="2.4% Marketing & Charity"
+                desc="2.4% tax contribution to further marketing initiatives, token development and charity."
+                icon={FeatureCardIcon_4}
+              />
 
-            <img src={star_glow} className={styles.star_glow} alt="" />
-          </div>
+              <img src={star_glow} className={styles.star_glow} alt="" />
+            </div>
+          </Fade>
         </div>
       </div>
     </div>
