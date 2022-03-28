@@ -16,9 +16,7 @@ import { Fade } from "react-awesome-reveal";
 function HomePage() {
   return (
     <div className={styles.home}>
-      <Fade cascade triggerOnce direction="down">
-        <Navbar />
-      </Fade>
+      <Navbar />
       <div className="mb-100px" id="home">
         <Hero />
       </div>
@@ -50,9 +48,7 @@ function HomePage() {
         <Coins />
       </div>
       <div className="mb-100px" id="contact">
-        <Fade cascade triggerOnce>
-          <Contact />
-        </Fade>
+        <Contact />
       </div>
       <div className="mb-100px">
         <Footer />

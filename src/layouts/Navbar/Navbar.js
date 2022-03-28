@@ -9,6 +9,7 @@ import { GrFormClose } from "react-icons/gr";
 import { GiHamburgerMenu } from "react-icons/gi";
 import OutsideClickDetector from "hooks/OutsideClickDetector";
 import { Link as ScrollLink } from "react-scroll";
+import { Fade } from "react-awesome-reveal";
 
 function Navbar() {
   const isBellow860px = useMediaQuery("(max-width : 860px)");
