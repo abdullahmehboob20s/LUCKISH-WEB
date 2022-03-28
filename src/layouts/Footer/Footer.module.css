@@ -1,0 +1,14 @@
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+}
+
+.socialLink > :not(:last-child) {
+  margin-right: 16px;
+}

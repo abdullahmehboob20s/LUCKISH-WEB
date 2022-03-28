@@ -1,0 +1,12 @@
+.section {
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  margin-right: 40px;
+}
+
+.howDoesItWork_Image {
+  width: 404px;
+}
