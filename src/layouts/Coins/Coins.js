@@ -5,7 +5,7 @@ import coins from "assets/images/coins.png";
 function Coins() {
   return (
     <div className={styles.coins}>
-      <img src={coins} className="w-full" alt="" />
+      <img src={coins} className="w-full floating" alt="" />
     </div>
   );
 }

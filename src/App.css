@@ -774,6 +774,25 @@ li {
   border-image-slice: 10;
 }
 
+.floating {
+  animation-name: floating;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 25px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
 /* .gradient-box::before {
   content: "";
   position: absolute;

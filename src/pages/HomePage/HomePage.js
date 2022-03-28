@@ -34,7 +34,7 @@ function HomePage() {
         <HowDoesItWork />
       </div>
       <div className="mb-100px" id="token">
-        <Fade cascade triggerOnce direction="left">
+        <Fade cascade triggerOnce direction="left" duration={500}>
           <Tokenomics />
         </Fade>
       </div>

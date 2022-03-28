@@ -14,7 +14,7 @@ function HowDoesItWork() {
           <Fade cascade triggerOnce direction="down">
             <img
               src={howDoesItWorkImage}
-              className={styles.howDoesItWork_Image}
+              className={`${styles.howDoesItWork_Image} `}
               alt=""
             />
           </Fade>
