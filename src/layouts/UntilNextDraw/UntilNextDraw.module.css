@@ -32,24 +32,6 @@
   margin-right: 30px;
 }
 
-.timerBox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.countBox {
-  position: relative;
-  width: 74px;
-  height: 74px;
-  /* border-radius: 8px !important; */
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* z-index: 1; */
-}
-
 /* .countBox::before {
   content: "";
   position: absolute;
@@ -71,3 +53,19 @@
   z-index: -1;
   border-radius: 20px;
 } */
+
+.statsWrapper > :not(:last-child) {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 1200px) {
+  .statsWrapper > :not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 860px) {
+  .timer > :not(:last-child) {
+    margin-right: 0.8rem;
+  }
+}

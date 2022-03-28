@@ -1,7 +1,6 @@
 .heroContent {
   flex: 1;
   padding-top: 140px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,4 +25,19 @@
 
 .luckyBnbHeroBanner_content > * {
   font-size: 6.5vw;
+}
+
+@media (max-width: 880px) {
+  .heroContent {
+    padding-top: 100px;
+  }
+
+  .luckyBnbHeroBanner {
+    width: 100%;
+  }
+
+  .luckyBnbHeroBanner_content {
+    right: 23%;
+    bottom: 34%;
+  }
 }

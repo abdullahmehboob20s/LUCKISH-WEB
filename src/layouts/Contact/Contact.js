@@ -1,14 +1,19 @@
 import React from "react";
 import styles from "./Contact.module.css";
 import coinMachine from "assets/images/coinMachine.png";
+import Title from "components/Title/Title";
+import useMediaQuery from "hooks/useMediaQuery";
 
 function Contact() {
+  const isBellow720px = useMediaQuery("(max-width : 720px)");
+
   return (
     <div className="container-wrapper">
       <div className={styles.section}>
         <div className={styles.left}>
           <div className="mb-50px">
-            <h1 className="fs-44px white weight-7 mb-4">Contact</h1>
+            <Title title="Contact" className="" />
+
             <p className="fs-16px text-gray weight-4">
               Have a question? Reach out to us and we’ll get back to you
               shortly.
@@ -59,7 +64,7 @@ function Contact() {
               <span className="white weight-7">8</span>
               <span className="white weight-7">8</span>
             </div>
-            <img src={coinMachine} alt="" />
+            <img src={coinMachine} className={styles.coinMachine} alt="" />
           </div>
         </div>
       </div>

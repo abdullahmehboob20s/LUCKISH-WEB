@@ -807,14 +807,7 @@ li {
 /*  */
 /*  */
 
-@media (max-width: 1000px) {
-  :root {
-    --fs-36px: 28px;
-    --fs-32px: 22px;
-    --fs-50px: 40px;
-  }
-}
-@media (max-width: 760px) {
+/* @media (max-width: 760px) {
   .yellow-btn {
     padding: 12px 18px;
   }
@@ -824,17 +817,7 @@ li {
   .mb-150px {
     margin-bottom: 90px;
   }
-}
-
-@media (max-width: 500px) {
-  :root {
-    --fs-36px: 20px;
-    --fs-32px: 18px;
-    --fs-50px: 30px;
-    --fs-40px: 24px;
-    --fs-20px: 16px;
-  }
-}
+} */
 
 /*
 nft minting css

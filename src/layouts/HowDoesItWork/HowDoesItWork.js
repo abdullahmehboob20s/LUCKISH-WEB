@@ -1,8 +1,11 @@
 import React from "react";
 import styles from "./HowDoesItWork.module.css";
 import howDoesItWorkImage from "assets/images/howDoesItWorkImage.png";
+import useMediaQuery from "hooks/useMediaQuery";
 
 function HowDoesItWork() {
+  const isBellow860px = useMediaQuery("(max-width : 860px)");
+
   return (
     <div className="container-wrapper">
       <div className={styles.section}>
@@ -14,18 +17,30 @@ function HowDoesItWork() {
           />
         </div>
         <div className={styles.right}>
-          <h1 className="fs-44px white weight-7 mb-15px">
+          <h1
+            className={`${
+              isBellow860px ? "fs-26px" : "fs-44px"
+            }  white weight-7 mb-15px`}
+          >
             How Does LuckyBNB Work?
           </h1>
 
-          <p className="fs-18px white weight-4 lh-1_6 mb-20px">
+          <p
+            className={`${
+              isBellow860px ? "fs-14px" : "fs-18px"
+            } white weight-4 lh-1_6 mb-20px`}
+          >
             {" "}
             Our $LBNB Smart Contract tracks buy transactions since the last
             drawing and chooses a winner at random. There’s a new winner every
             six hours!
           </p>
 
-          <p className="fs-18px white weight-4 lh-1_6 mb-20px">
+          <p
+            className={`${
+              isBellow860px ? "fs-14px" : "fs-18px"
+            } white weight-4 lh-1_6 mb-20px`}
+          >
             {" "}
             Every buy and sell of $LBNB provides 2.4% to our sweepstakes prize
             pool. The winning wallet is randomly chosen by the smart contract
@@ -33,14 +48,22 @@ function HowDoesItWork() {
             in BNB tokens immediately during the draw.
           </p>
 
-          <p className="fs-18px white weight-4 lh-1_6 mb-20px">
+          <p
+            className={`${
+              isBellow860px ? "fs-14px" : "fs-18px"
+            } white weight-4 lh-1_6 mb-20px`}
+          >
             {" "}
             The contract also transfers 10% of each prize pool to our Mega
             Jackpot wallet for our weekly MegaBNB & monthly PowerBNB sweepstakes
             draws during the drawing process.
           </p>
 
-          <p className="fs-18px white weight-4 lh-1_6 mb-20px">
+          <p
+            className={`${
+              isBellow860px ? "fs-14px" : "fs-18px"
+            } white weight-4 lh-1_6 mb-20px`}
+          >
             {" "}
             During each six-hour sweepstakes period, each wallet that swaps a
             minimum amount of BNB for $LBNB tokens in a single transaction is
@@ -48,7 +71,11 @@ function HowDoesItWork() {
             qualify for the next drawing will be published regularly.
           </p>
 
-          <p className="fs-18px white weight-4 lh-1_6 mb-20px">
+          <p
+            className={`${
+              isBellow860px ? "fs-14px" : "fs-18px"
+            } white weight-4 lh-1_6 mb-20px`}
+          >
             {" "}
             Beware! A sell that follows a buy within a single drawing period
             forfeits that entry, and the entry will be transferred to the
@@ -57,7 +84,11 @@ function HowDoesItWork() {
             using multiple wallets.
           </p>
 
-          <p className="fs-18px white weight-4 lh-1_6 mb-20px">
+          <p
+            className={`${
+              isBellow860px ? "fs-14px" : "fs-18px"
+            } white weight-4 lh-1_6 mb-20px`}
+          >
             {" "}
             If the chosen entry is one that was forfeited to the contract
             because of a sell, the pool will roll over to the next draw,

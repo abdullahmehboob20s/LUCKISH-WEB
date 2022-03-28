@@ -9,11 +9,14 @@ import cardProps_1 from "assets/images/cardProps_1.png";
 import cardProps_2 from "assets/images/star_glow.png";
 import cardProps_3 from "assets/images/cardProps_3.png";
 import FortuneMapSection from "components/FortuneMapSection/FortuneMapSection";
+import Title from "components/Title/Title";
+import useMediaQuery from "hooks/useMediaQuery";
 
 function FortuneMap() {
   const roadmap = useRef(null);
   const roadmapLine = useRef(null);
   const [value, setValue] = useState(0);
+  const isBellow720px = useMediaQuery("(max-width : 720px)");
 
   useEffect(() => {
     const handler = () => {
@@ -31,9 +34,7 @@ function FortuneMap() {
 
   return (
     <div className="container-wrapper">
-      <h1 className="text-center fs-44px white weight-7 mb-70px">
-        Fortune Map
-      </h1>
+      <Title title="Fortune Map" className="text-center mb-70px" />
 
       <div className={styles.roadmap_cards} ref={roadmap}>
         <div className={styles.roadmapLineWrapper}>

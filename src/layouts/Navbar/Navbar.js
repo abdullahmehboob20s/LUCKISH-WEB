@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "assets/images/logo.png";
 import styles from "./Navbar.module.css";
 import SocialLink from "components/SocialLink/SocialLink";
 import { FaTwitter, FaDiscord, FaTelegramPlane } from "react-icons/fa";
 import Button from "components/Button/Button";
+import useMediaQuery from "hooks/useMediaQuery";
+import { GrFormClose } from "react-icons/gr";
+import { GiHamburgerMenu } from "react-icons/gi";
+import OutsideClickDetector from "hooks/OutsideClickDetector";
 
 function Navbar() {
+  const isBellow860px = useMediaQuery("(max-width : 860px)");
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = OutsideClickDetector(() => {
+    setIsOpen(false);
+  });
+
   return (
     <div className={styles.navbarWrapper}>
       <div className="container-wrapper">
@@ -14,28 +24,99 @@ function Navbar() {
             <img src={logo} className={styles.logo} alt="" />
           </div>
 
-          <div className={styles.navLinks}>
-            <a href="#" className="fs-16px white weight-4">
-              Home
-            </a>
-            <a href="#" className="fs-16px white weight-4">
-              Token
-            </a>
-            <a href="#" className="fs-16px white weight-4">
-              Roadmap
-            </a>
-            <a href="#" className="fs-16px white weight-4">
-              Contact
-            </a>
+          <div className={`black-screen ${isOpen ? "show" : ""}`}></div>
+
+          <div
+            ref={menuRef}
+            className={`${styles.navbar_right} ${isOpen ? styles.open : ""}`}
+          >
+            <button
+              className={`${styles.closeBtn} w-fit-content mb-15px pointer`}
+              style={{ marginLeft: "-10px" }}
+              onClick={() => setIsOpen(false)}
+            >
+              <GrFormClose size={34} />
+            </button>
+
+            <div className={styles.navLinks}>
+              <a
+                href="#"
+                className={`fs-16px ${
+                  isBellow860px ? "black" : "white"
+                }  weight-4`}
+              >
+                Home
+              </a>
+              <a
+                href="#"
+                className={`fs-16px ${
+                  isBellow860px ? "black" : "white"
+                }  weight-4`}
+              >
+                Token
+              </a>
+              <a
+                href="#"
+                className={`fs-16px ${
+                  isBellow860px ? "black" : "white"
+                }  weight-4`}
+              >
+                Roadmap
+              </a>
+              <a
+                href="#"
+                className={`fs-16px ${
+                  isBellow860px ? "black" : "white"
+                }  weight-4`}
+              >
+                Contact
+              </a>
+            </div>
+
+            <div className={styles.navSocialLinks}>
+              <div className={styles.socialIcons}>
+                <SocialLink
+                  icon={
+                    <FaTwitter
+                      style={{
+                        fill: isBellow860px ? "var(--yellow)" : "white",
+                      }}
+                      size={20}
+                    />
+                  }
+                />
+                <SocialLink
+                  icon={
+                    <FaDiscord
+                      style={{
+                        fill: isBellow860px ? "var(--yellow)" : "white",
+                      }}
+                      size={23}
+                    />
+                  }
+                />
+                <SocialLink
+                  icon={
+                    <FaTelegramPlane
+                      style={{
+                        fill: isBellow860px ? "var(--yellow)" : "white",
+                      }}
+                      size={22}
+                    />
+                  }
+                />
+              </div>
+
+              <Button title="Connect" />
+            </div>
           </div>
 
-          <div className={styles.navSocialLinks}>
-            <SocialLink icon={<FaTwitter size={20} />} />
-            <SocialLink icon={<FaDiscord size={23} />} />
-            <SocialLink icon={<FaTelegramPlane size={22} />} />
-
-            <Button title="Connect" />
-          </div>
+          <button
+            className={`${styles.hamburger} pointer`}
+            onClick={() => setIsOpen(true)}
+          >
+            <GiHamburgerMenu size={30} />
+          </button>
         </div>
       </div>
     </div>

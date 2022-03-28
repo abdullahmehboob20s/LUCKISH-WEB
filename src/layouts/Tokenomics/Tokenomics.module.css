@@ -10,3 +10,14 @@
   border-bottom: 1px solid var(--text-gray);
   border-right: 1px solid var(--text-gray);
 }
+
+@media (max-width: 600px) {
+  .cards_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    padding: 24px 0.8rem;
+  }
+}

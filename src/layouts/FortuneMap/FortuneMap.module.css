@@ -1,7 +1,6 @@
 .roadmap_cards {
   position: relative;
 }
-
 .roadmap_cards > :not(:last-child) {
   margin-bottom: 100px;
 }
@@ -26,4 +25,17 @@
 .innerLine {
   width: 100%;
   background-color: white;
+}
+
+@media (max-width: 1000px) {
+  .roadmap_cards > :not(:last-child) {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 720px) {
+  .roadmapLineWrapper {
+    left: 30px;
+    transform: translateX(0%);
+  }
 }

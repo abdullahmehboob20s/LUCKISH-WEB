@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./FortuneMapSection.module.css";
 import roadmap_card_circle from "assets/images/roadmap_card_circle.png";
+import useMediaQuery from "hooks/useMediaQuery";
 
 const FortuneMapSection = ({
   title,
@@ -11,6 +12,8 @@ const FortuneMapSection = ({
   cardPropsStyles,
   reverse = false,
 }) => {
+  const isBellow1000px = useMediaQuery("(max-width : 1000px)");
+
   return (
     <div className={`${styles.cardSection} ${reverse ? styles.reverse : ""}`}>
       <div className={styles.card_wrapper}>
@@ -21,18 +24,29 @@ const FortuneMapSection = ({
           {cardPropImg ? (
             <img
               src={cardPropImg}
-              className="absolute"
+              className={`${styles.cardPropsStyles} absolute`}
               style={cardPropsStyles}
               alt=""
             />
           ) : (
             ""
           )}
-          <h2 className={`fs-32px white weight-7 mb-10px`}>{title}</h2>
+          <h2
+            className={`${
+              isBellow1000px ? "fs-22px" : "fs-32px"
+            } white weight-7 mb-10px`}
+          >
+            {title}
+          </h2>
 
           <ul className={styles.card_points} style={{ paddingLeft: "5.5%" }}>
             {points.map((point, index) => (
-              <li key={index} className="fs-16px weight-4 white">
+              <li
+                key={index}
+                className={`${
+                  isBellow1000px ? "fs-14px" : "fs-16px"
+                } weight-4 white`}
+              >
                 {point}
               </li>
             ))}

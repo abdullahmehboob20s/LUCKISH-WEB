@@ -1,11 +1,28 @@
+import Title from "components/Title/Title";
+import useMediaQuery from "hooks/useMediaQuery";
 import React from "react";
 import styles from "./Tokenomics.module.css";
 
 const Card = ({ title, desc }) => {
+  const isBellow760px = useMediaQuery("(max-width : 760px)");
+
   return (
     <div className={styles.card}>
-      <h2 className="mb-10px text-center fs-20px white weight-7">{title}</h2>
-      <p className="text-center fs-16px white weight-7 text-gray">{desc}</p>
+      <h2
+        className={`${
+          isBellow760px ? "fs-16px mb-5px" : "fs-20px mb-10px"
+        }  text-center white weight-7`}
+        style={{ wordBreak: "break-all" }}
+      >
+        {title}
+      </h2>
+      <p
+        className={`${
+          isBellow760px ? "fs-14px" : "fs-16px"
+        }  text-center white weight-7 text-gray`}
+      >
+        {desc}
+      </p>
     </div>
   );
 };
@@ -13,7 +30,7 @@ const Card = ({ title, desc }) => {
 function Tokenomics() {
   return (
     <div className="container-wrapper">
-      <h1 className="text-center fs-44px white weight-7 mb-50px">Tokenomics</h1>
+      <Title title="Tokenomics" className="text-center mb-50px" />
 
       <div className={styles.cards_grid}>
         <Card title="1,000,000,000,000" desc="Tokens " />

@@ -5,15 +5,25 @@ import FeatureCardIcon_2 from "assets/images/FeatureCardIcon_2.png";
 import FeatureCardIcon_3 from "assets/images/FeatureCardIcon_3.png";
 import FeatureCardIcon_4 from "assets/images/FeatureCardIcon_4.png";
 import star_glow from "assets/images/star_glow.png";
+import Title from "components/Title/Title";
+import useMediaQuery from "hooks/useMediaQuery";
 
 const Card = ({ title, desc, icon }) => {
+  const isBellow760px = useMediaQuery("(max-width : 760px)");
+
   return (
     <div className={styles.card}>
       <div className={`${styles.iconBox} mb-20px `}>
         <img src={icon} alt="" />
       </div>
 
-      <h4 className="fs-20px white weight-7 mb-10px">{title}</h4>
+      <h4
+        className={`${
+          isBellow760px ? "fs-16px" : "fs-20px"
+        }  white weight-7 mb-10px`}
+      >
+        {title}
+      </h4>
       <p className="fs-12px white lh-1_6 weight-4">{desc}</p>
     </div>
   );
@@ -23,7 +33,7 @@ function Features() {
   return (
     <div>
       <div className="container-wrapper">
-        <h1 className="text-center fs-44px white weight-7 mb-50px">Features</h1>
+        <Title title="Features" className="text-center mb-50px" />
       </div>
 
       <div className={styles.cards_wrapper}>
