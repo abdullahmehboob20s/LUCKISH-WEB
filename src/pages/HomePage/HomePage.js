@@ -21,12 +21,12 @@ function HomePage() {
         <Hero />
       </div>
       <div className="mb-100px">
-        <Fade cascade triggerOnce direction="right" duration={1000}>
+        <Fade delay={500} duration={1000} cascade triggerOnce direction="right">
           <Introducing />
         </Fade>
       </div>
       <div className="mb-150px">
-        <Fade cascade triggerOnce direction="down" duration={1000}>
+        <Fade delay={500} duration={1000} cascade triggerOnce direction="down">
           <UntilNextDraw />
         </Fade>
       </div>
@@ -34,7 +34,7 @@ function HomePage() {
         <HowDoesItWork />
       </div>
       <div className="mb-100px" id="token">
-        <Fade cascade triggerOnce direction="left" duration={1000}>
+        <Fade delay={500} duration={1000} cascade triggerOnce direction="left">
           <Tokenomics />
         </Fade>
       </div>

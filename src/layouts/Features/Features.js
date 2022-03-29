@@ -39,7 +39,13 @@ function Features() {
 
       <div className={styles.cards_wrapper}>
         <div className="container-wrapper">
-          <Fade cascade triggerOnce direction="down">
+          <Fade
+            delay={500}
+            duration={1000}
+            cascade
+            triggerOnce
+            direction="down"
+          >
             <div className={styles.cards_container}>
               <Card
                 title="3.2% Auto-Liquidity Add"

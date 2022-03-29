@@ -11,7 +11,13 @@ function HowDoesItWork() {
     <div className="container-wrapper">
       <div className={styles.section}>
         <div className={styles.left}>
-          <Fade cascade triggerOnce direction="down">
+          <Fade
+            delay={500}
+            duration={1000}
+            cascade
+            triggerOnce
+            direction="down"
+          >
             <img
               src={howDoesItWorkImage}
               className={`${styles.howDoesItWork_Image} `}
@@ -19,7 +25,7 @@ function HowDoesItWork() {
             />
           </Fade>
         </div>
-        <Fade cascade triggerOnce direction="down">
+        <Fade delay={500} duration={1000} cascade triggerOnce direction="down">
           <div className={styles.right}>
             <h1
               className={`${

@@ -6,7 +6,7 @@ import { Fade } from "react-awesome-reveal";
 function Hero() {
   return (
     <div className={styles.hero}>
-      <Fade cascade triggerOnce>
+      <Fade delay={500} duration={1000} cascade triggerOnce>
         <div className={styles.heroContent}>
           <div className="container-wrapper">
             <div className={styles.luckyBnbHeroBanner_parent}>

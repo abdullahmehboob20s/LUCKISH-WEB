@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import logo from "assets/images/logo.png";
 import styles from "./Navbar.module.css";
 import SocialLink from "components/SocialLink/SocialLink";
-import { FaTwitter, FaDiscord, FaTelegramPlane } from "react-icons/fa";
+import { FaTwitter, FaTelegramPlane } from "react-icons/fa";
 import Button from "components/Button/Button";
 import useMediaQuery from "hooks/useMediaQuery";
 import { GrFormClose } from "react-icons/gr";
 import { GiHamburgerMenu } from "react-icons/gi";
 import OutsideClickDetector from "hooks/OutsideClickDetector";
 import { Link as ScrollLink } from "react-scroll";
-import { Fade } from "react-awesome-reveal";
+import DocumentIcon from "Myicons/DocumentIcon";
 
 function Navbar() {
   const isBellow860px = useMediaQuery("(max-width : 860px)");
@@ -105,6 +105,8 @@ function Navbar() {
             <div className={styles.navSocialLinks}>
               <div className={styles.socialIcons}>
                 <SocialLink
+                  link="https://twitter.com/Lucky_BNB"
+                  target="_blank"
                   icon={
                     <FaTwitter
                       style={{
@@ -115,16 +117,19 @@ function Navbar() {
                   }
                 />
                 <SocialLink
+                  link="https://luckyworldjackpot.gitbook.io/lucky-world-jackpot/"
+                  target="_blank"
+                  className="black"
                   icon={
-                    <FaDiscord
-                      style={{
-                        fill: isBellow860px ? "var(--yellow)" : "white",
-                      }}
+                    <DocumentIcon
+                      color={isBellow860px ? "#e8b235" : "white"}
                       size={23}
                     />
                   }
                 />
                 <SocialLink
+                  link="https://t.me/LuckyBNB_Official"
+                  target="_blank"
                   icon={
                     <FaTelegramPlane
                       style={{

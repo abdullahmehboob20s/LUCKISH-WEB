@@ -41,7 +41,7 @@ const FortuneMapSection = ({
           </h2>
 
           <ul className={styles.card_points} style={{ paddingLeft: "5.5%" }}>
-            <Fade duration={1000} cascade triggerOnce>
+            <Fade delay={500} duration={1000} cascade triggerOnce>
               {points.map((point, index) => (
                 <li
                   key={index}
@@ -62,7 +62,7 @@ const FortuneMapSection = ({
       </div>
 
       <div className={styles.img_wrapper}>
-        <Fade duration={500} cascade triggerOnce delay={1000}>
+        <Fade delay={500} duration={1000} cascade triggerOnce>
           <img src={img} alt="" />
         </Fade>
       </div>
