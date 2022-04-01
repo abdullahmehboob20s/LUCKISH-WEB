@@ -1,3 +1,3 @@
-# Lucky WB
+# Lucky WEB
 
-![bnb](https://user-images.githubusercontent.com/64467248/160276083-334e9490-8027-4762-92ae-7aae793e85ce.jpg)
+## [VISIT WEB](https://luckish-web.vercel.app/)
